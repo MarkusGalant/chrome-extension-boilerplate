@@ -3,6 +3,6 @@
 interface IParseItem {
   img: string;
   title: string;
-  chanel: string;
+  channel: string;
   link: string;
 }

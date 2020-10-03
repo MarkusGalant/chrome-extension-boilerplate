@@ -23,17 +23,17 @@ const parse = async () => {
 const parseItem = (element: HTMLElement): IParseItem => {
   const imgEl = element.querySelector<HTMLImageElement>('#thumbnail img');
   const titleEl = element.querySelector<HTMLAnchorElement>('#video-title');
-  const chanelEl = element.querySelector<HTMLElement>(
-    '#channel-info #channel-name'
+  const channelEl = element.querySelector<HTMLElement>(
+    '#channel-info #channel-name #text'
   );
 
   const title = titleEl?.textContent?.trim() || '';
   const link = titleEl?.href || '';
 
   const img = imgEl?.src || '';
-  const chanel = chanelEl?.textContent?.trim() || '';
+  const channel = channelEl?.textContent?.trim() || '';
 
-  return { img, title, link, chanel };
+  return { img, title, link, channel };
 };
 
 chrome.runtime.onMessage.addListener((message) => {

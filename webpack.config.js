@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
+    overview: path.join(__dirname, './src/overview/index.tsx'),
     popup: path.join(__dirname, './src/popup/index.tsx'),
     content: path.join(__dirname, './src/content/index.ts'),
   },
@@ -30,6 +31,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'popup/index.html',
       template: 'src/popup/index.html',
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'overview/index.html',
+      template: 'src/overview/index.html',
       inject: false,
     }),
     new CopyWebpackPlugin({

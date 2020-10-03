@@ -68,7 +68,7 @@ const Popup = () => {
   }, [working]);
 
   const openOverview = useCallback(() => {
-    console.log('ss');
+    chrome.tabs.create({ url: chrome.runtime.getURL('overview/index.html') });
   }, []);
 
   return (
