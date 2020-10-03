@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Youtube result parser",
+  "description": "This extension parse videos titles on Youtube",
+  "version": "1.0.1",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "64": "icon.png"
+  },
+  "browser_action": {
+    "default_title": "interestsexplorer - FB Interests Extractor",
+    "default_popup": "popup/index.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/results?search_query=*"
+      ],
+      "js": [
+        "content/index.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
+  "incognito": "split"
+}
