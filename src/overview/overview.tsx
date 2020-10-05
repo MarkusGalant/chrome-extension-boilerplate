@@ -12,6 +12,15 @@ import { convertToCSV } from '../utils';
 
 const columns: ColDef[] = [
   {
+    field: 'img',
+    headerName: 'Video',
+    // eslint-disable-next-line react/display-name
+    renderCell: ({ data }: ValueFormatterParams) => (
+      <img height="100%" src={data.img} />
+    ),
+    width: 150,
+  },
+  {
     field: 'title',
     headerName: 'Video name',
     // eslint-disable-next-line react/display-name
@@ -60,11 +69,16 @@ const Overview = () => {
   }, [items]);
 
   return (
-    <Box display="grid" justifyContent="center">
-      <Box mt={1} mb={5}>
-        <Typography variant="h4">Overview youtube scrap result</Typography>
+    <Box display="grid">
+      <Box mx={2} mb={5}>
+        <Typography variant="h3">Overview</Typography>
       </Box>
-      <Box width={900} height={400} overflow="hidden">
+      <Box mt={1} ml={1} visibility={selection.length ? 'visible' : 'hidden'}>
+        <Button color="primary" onClick={download}>
+          Downlaod
+        </Button>
+      </Box>
+      <div style={{ height: 600, width: '100%', bottom: 0 }}>
         <DataGrid
           checkboxSelection
           rows={items}
@@ -73,16 +87,7 @@ const Overview = () => {
             setSelection(newSelection.rows);
           }}
         />
-      </Box>
-      <Box mt={1} ml={1}>
-        {!!selection.length ? (
-          <Button color="primary" onClick={download}>
-            Downlaod
-          </Button>
-        ) : (
-          <></>
-        )}
-      </Box>
+      </div>
     </Box>
   );
 };
