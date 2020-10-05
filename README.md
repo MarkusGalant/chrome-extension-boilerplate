@@ -1,6 +1,6 @@
 # Chrome Extension template - Youtube parser-scraper
 
-[Download](https://github.com//MarkusGalant/chrome-extension-boilerplate/raw/master/extension-youtube-parser.zip)
+[Download chrome extension v.1](https://github.com//MarkusGalant/chrome-extension-boilerplate/raw/master/extension-youtube-parser.zip)
 
 
 Skills:
