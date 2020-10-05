@@ -4,10 +4,11 @@
 
 
 Skills:
-⋅⋅* Chrome extension
-⋅⋅* Javascript
-⋅⋅* Typescript
-⋅⋅* React.JS
-⋅⋅* Materil UI
-⋅⋅* HTML, CSS
-⋅⋅* Webpack
+
+* Chrome extension
+* Javascript
+* Typescript
+* React.JS
+* Materil UI
+* HTML, CSS
+* Webpack
